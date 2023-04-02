@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <style>
+        .box {
+            background-color: rgb(105, 0, 140);
+            height: 200px;
+            width: 200px;
+        }
+
+        .box2 {
+            background-color: rgb(10, 88, 88);
+            height: 200px;
+            width: 200px;
+        }
+
+        .box3 {
+            background-color: rgb(71, 153, 8);
+            height: 200px;
+            width: 200px;
+        }
+        [v-cloak] {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Getting to know VueJS</h1>
+    <div id="app" v-cloak>
+        {{greeting}}
+        <input type="text" v-model="greeting">
+        <hr>
+        <div v-if="visible" class="box"></div>
+        <div v-if="visible2" class="box2"></div>
+        <div v-else class="box3"></div>
+    </div>
+
+    
+
+    
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    greeting: "Hello, Vue",
+                    visible: false,
+                    visible2: true
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+</html>
